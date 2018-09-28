@@ -171,4 +171,56 @@
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+   <profile>
+    <activation>
+      <os>
+        <family>linux</family>
+      </os>
+    </activation>
+    <build>
+        <plugins>
+            <plugin>
+                 <groupId>org.codehaus.mojo</groupId>
+                 <artifactId>rpm-maven-plugin</artifactId>
+                 <version>2.1.5</version>
+                 <executions>
+                     <execution>
+                         <id>generate-rpm</id>
+                         <goals>
+                             <goal>attached-rpm</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+                 <configuration>
+                     <name>jvmtop</name>
+                     <group>Application/Tools</group>
+                     <distribution>Strapdata</distribution>
+                     <packager>Strapdata</packager>
+                     <needarch>false</needarch>
+                     <requires>
+                         <require>java</require>
+                     </requires>
+                     <mappings>
+                         <mapping>
+                             <directory>/usr/bin</directory>
+                             <directoryIncluded>false</directoryIncluded>
+                             <filemode>0755</filemode>
+                             <username>root</username>
+                             <groupname>root</groupname>
+                             <sources>
+                                 <source>
+                                     <location>target/jvmtop</location>
+                                     <destination>pkitool</destination>
+                                 </source>
+                             </sources>
+                         </mapping>
+                     </mappings>
+                 </configuration>
+             </plugin>
+        </plugins>
+      </build>
+  </profile>
+ </profiles>
 </project>
