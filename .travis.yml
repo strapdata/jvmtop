@@ -1,23 +1,25 @@
 language: java
-jdk: 
+jdk:
 - oraclejdk8
 
 script: mvn package
 
 cache:
   directories:
-    - $HOME/.m2
+  - "$HOME/.m2"
 
 deploy:
-  - provider: releases
-    overwrite: true
-    draft: false
-    api_key:
-       secure: "UJUpO9IlEpBu76z3NF37zkP66TUBlRNZ7gNM9NZUifIXBs6SvYbYkHGwV3K1P6X3sILG/R6357SEf7+NFCBKcHpFNtzNjEcC12edNxYKZhsqa3CPY/5WhGemiuUvNc/bgOCdwriGYhT/O8jvD/O/zXwGcufGcJN8Mj5GxgT48OLEH3gTde3dOtTEXHqYW5supcChFM69jalsEYchUvNrFPwv3hj8mFycKGpYTTe4E5kXzezi+C13K/OF+AX6EcTpJRrzdqkqIMYNM9FAsn2p4IJLyg3PX+4XU8+zR7aGYjpJGNJ3sWN2Mnd47XIVVwyVflfItKhb/eex+BXK5sRmv+/Wo+04TsY3VLL20nfReV8X5MPO3ZWmV6oAYkQyakpchdc1s3zONrp60SbbWTuDGcsuF4emmK1hstGOjtuDmkyvys0+zrL3D7UaN3mz5sMSQKc2Cr5v9iMkkloLqAjRWU0fbSfqTR374DqKpolZfmD1iF9wqfENtG2v6w8gc4IZT+Am0UCz7QYEBc1bndbrpg8NiKea3K2aN8UXTU9Ur+n6y1fIaM2b/cAgrv7NbdGkoSN4zJRV6eAtxvVJvZyXmOABi5cnJSh9LBDEgcuLinqTxjPcB+h7REIsMIFrXbVal235AbYTFVpSMUM5rmFyLP84/F5V+T8h2GPyJiMdojI="
-    file: 
-    - jvmtop
-    - jvmtop.jar
-    skip_cleanup: false
-    on:
-      tags: false
-      repo: strapdata/jvmtop
+- provider: releases
+  overwrite: true
+  draft: false
+  file:
+  - jvmtop
+  - jvmtop.jar
+  skip_cleanup: false
+  on:
+    tags: false
+    repo: strapdata/jvmtop
+
+env:
+  global:
+    secure: 3JnqCM599yxOGkTz3Yo/93rh1gDlXCPMxrA9xfN15WrcexRxAy+rBTk39fhtSD49hjqaX0wOvlV1k8z6HV8koNfYB4VNMoX188Y6EislVa3CkAJ9UqXfmhv0NcQs2WqHIbjjNwGrysJu01QO7l0qv6FF0VEtWoMMxrkYJKDV4RmXOudoMaSXvNI3fwL3vttzu/wJQieLarrcVs8x4QKo2c8j6x6QYNeAZ6KD/oQGrx0dlWtF9He53AZLIblS82DnliJ7EH3JOlvmrWMc0EzgxOvElxtkOUk684h2bIntipEm89w94k52QE+wLAKOB6GllQ9VhbamuUOCmgs54RJ/lBdMsLvcelIIXY+2M0jhyPwLo33GNAIdtL1ldzk9AHmS6PgHq44Dx4zszYUc3Oj6DjGU+UNjGqEcP1CmsREvCQmR9F2mRazuyckVIXr+4Akc9ziAi/6n5RqfBstu/RAA3SBtxPjFnN2oW+Rrp4vFpXvWYXT3OBJq/xqmb2fPCKXGZvTL44/VqVxF83h+/70pARc0gBJFA3JfXs0TgZEQnfGz4Y3LSQF/vLs9528/Ddru3bRWMmAwJiHTHKvduFbGr6ytAfz8gDqyBqFdsP+JIEWwmH04Vr7BjerlYi3qJNxW35/EbwKJkzNc9DLQIyJTLUQJH0wB3hr6JYow/UbNXKM=
