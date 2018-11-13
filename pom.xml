@@ -171,7 +171,8 @@
             </plugin>
         </plugins>
     </build>
-    
+   
+<!-- 
     <profiles>
    <profile>
     <activation>
@@ -223,4 +224,6 @@
       </build>
   </profile>
  </profiles>
+-->
+
 </project>
