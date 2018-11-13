@@ -1,0 +1,23 @@
+language: java
+jdk: 
+- oraclejdk8
+
+script: mvn package
+
+cache:
+  directories:
+    - $HOME/.m2
+
+deploy:
+  - provider: releases
+    overwrite: true
+    draft: false
+    api_key:
+      secure: "VV61Vvnc85PTqqrG4A9mIyjmdpdXwtSkN1WSiwAHrs2LUgr6CFaQucyw8aRRpYofHmGeGviBdt7YfXMGL26XR83euyQ5QsWoQoEg7Wp2tCSHXly30G+thRD09G3Suw4L4gbfi91XjSt6Nys1bTwwnOuAzfM6Sg+s1X4CCjEgYdk1gDhpH3NhnTP/vIo4wiyWdN202L81yvKa1vlSbHVYbie0j4W9eWByBJVt+1y2jj0V1dzzAYphoqMLRkwbNnrARpHXEpLXzfT8wQ1yz6RhyP7jW1zOWskqsQoIabpD86SjjN8jd+aqJStnJT4zgt7UGdtxItePeJ4/veb3u0kornHiJKm5Gdubzmh69pNvPzcdwWRHPSvMjS8GTiwXPvkn272RvcCHP++ULAjVpgykTvHzhAqyfpCCx33+CL4JfEOU1lDsZ20CUPXIGq5pR+uyd48FymbsWuoWltF5SsUQIiW5JWiLIrbaFxSgks4ZKnuvNRDORXkz6gp1sblWXLjADrylOhAmTcnWxpeq5vIJbiW/wzfGFSdOshTU3ilSC9djTV7PtmAkM8nH4HvSxkuwfnIf1S1Y1prPGeR4Z/Fz+VitnXOVk4cfDdono1AR6q2HR5POIVUKQQAp5YE5RhfNsNoMcJ9wAjQA0HvbakI7kFi4HeP7iEcfgix470I+b8w="
+    file: 
+    - jvmtop
+    - jvmtop.jar
+    skip_cleanup: false
+    on:
+      tags: true
+      repo: strapdata/jvmtop
