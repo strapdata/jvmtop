@@ -212,7 +212,7 @@
                              <sources>
                                  <source>
                                      <location>target/jvmtop</location>
-                                     <destination>pkitool</destination>
+                                     <destination>jvmtop</destination>
                                  </source>
                              </sources>
                          </mapping>
