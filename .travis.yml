@@ -19,5 +19,5 @@ deploy:
     - jvmtop.jar
     skip_cleanup: false
     on:
-      tags: true
+      tags: false
       repo: strapdata/jvmtop
